@@ -1,0 +1,354 @@
+<html>
+    <head>
+
+    </head>
+     <body>
+         
+         <h1>learn the english letters </h1>
+         number of letters <input type=text id="numberOfletters">
+          <input  type="button" value="generate" id="generate"> <br>
+          <input type="hidden" class="asd">
+          <img src="" id="image">
+          <h2></h2> 
+          <div id="result"></div>                       
+         <script>
+             
+             var letters=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; 
+             function getrandomnumber(min,max)
+              {
+                var c=Math.floor(Math.random()*(max-min+1)+min);
+                return c;
+              } 
+              names=[];  
+              var p=document.getElementsByTagName("h2") [0] ;     
+             var generateNumber = document.getElementById("generate");
+             var  ImageCreate= document.getElementById("image")
+             var InputNumber = document.getElementById("numberOfletters");
+             generateNumber.addEventListener("click",function(){
+                clickCounter();               
+                var randomNumbers =parseInt(InputNumber.value,10);
+                if(randomNumbers>26)
+                {
+                     
+                    p.innerHTML+="please enter letters from 0 to 26";
+                    
+
+                }
+                else
+                {
+
+                for(var i=0; i<randomNumbers; i++)
+                {
+                   
+                     ss=getrandomnumber(0,letters.length-1);
+                    names[i]= document.createElement("INPUT");
+                    names[i].setAttribute("type", "button");
+
+                    names[i].setAttribute("value", letters[ss]);
+                    names[i].setAttribute("class","asd")
+                    document.body.appendChild(names[i]);
+            
+                     
+                    if(ss==0) 
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","a.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");
+                            
+
+                        });
+                    }
+                    else if(ss==1)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","b.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==2)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","c.jpg"); 
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px"); 
+                    }) ;
+                    }
+                    else if(ss==3)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","d.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==4)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","e.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==5)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","f.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==6)
+                    {
+                          names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","g.jpg"); 
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px"); 
+                    }) ;
+                    }
+                    else if(ss==7)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","h.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==8)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","i.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==9)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","j.png");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==10)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","k.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==11)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","l.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==12)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","m.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==13)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","n.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==14)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","o.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==15)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","p.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==16)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","q.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==17)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","r.jpg"); 
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px"); 
+                    }) ;
+                    }
+                    else if(ss==18)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","s.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==19)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","t.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==20)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","u.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==21)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","v.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==22)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","w.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");  
+                    }) ;
+                    }
+                    else if(ss==23)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","x.jpg"); 
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px"); 
+                    }) ;
+                    }
+                    else if(ss==24)
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","y.jpg"); 
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px"); 
+                    }) ;
+                    }
+                    else
+                    {
+                        names[i].addEventListener("click",function(){
+                            ImageCreate.setAttribute("src","z.jpg");
+                            ImageCreate.setAttribute("width","1000px");
+                            ImageCreate.setAttribute("height","500px");
+
+                    }) ;
+                    }              
+                              
+                                
+                
+                }
+                }
+                var Q=
+                    {
+                     generate:
+                     {
+                         clicked:localStorage.getItem('generate')
+                     }
+                     ,
+                     numberofletters:
+                     {
+                        qwe:localStorage.getItem('NumberOfletter')
+                     }
+                     ,
+                     lettersyouclicked:
+                     {
+                         valuess:localStorage.getItem('lettersClicked')
+                     } 
+                     ,
+                     loadpage:
+                     {
+                         loading:localStorage.getItem('load')
+                     }  
+                     ,
+                     UPloadpage:
+                     {
+                         unloading:localStorage.getItem('unload')
+                     }
+
+                    };
+                   localStorage.setItem('storeObj', JSON.stringify(Q));
+                });
+             
+                function clickCounter() {
+                    if(typeof(Storage) !== "undefined") {
+                        if (localStorage.clickcount) {
+                        localStorage.clickcount = Number(localStorage.clickcount)+1;
+                        } else {
+                        localStorage.clickcount = 1;
+                        }
+                        localStorage.setItem( "generate", localStorage.clickcount);
+                        localStorage.setItem( "NumberOfletter",InputNumber.value);
+                        localStorage.setItem("load",new Date); 
+                        localStorage.setItem("unload",new Date);                                          
+
+                    } else {
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                    }
+                    } 
+                    
+            
+         
+         
+                var n = localStorage.getItem('on_load_counter');
+                 
+                if (n === null) {
+                    n = 0;
+                }
+                 
+                n++;
+                 
+                localStorage.setItem("on_load_counter", n);
+                 
+                 var w = new Date();
+                console.log( w + "number of loading the page" +n);
+               
+               
+                </script>
+                
+         <style>
+             input
+             {
+                 margin: 10px;
+                 padding: 10px;
+                 display:inline;
+             }
+             h1
+             {
+                 color:brown;
+                 
+             }
+             h2
+             {
+                 color: red;
+             }
+             
+         </style>
+     </body>
+</html>
