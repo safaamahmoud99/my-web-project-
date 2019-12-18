@@ -1,1 +1,266 @@
+<html>
+    <head>
 
+    </head>
+     <body>
+         
+         <h1>   Learn The English Letters </h1>
+     <span> Number of letters</span> <input type=text id="numberOfletters">
+          <input  type="button" value="generate" id="generate"> <br>
+         <div id="div">           </div>
+          <img src="" id="image" >
+          <h2></h2> 
+          <script src="jquery-1.11.3.min.js"></script>
+                          
+         <script>
+             
+             var $s1;
+             var letters=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; 
+             var images=["a.jpg","b.jpg","c.jpg","d.jpg","e.jpg","f.jpg","g.jpg",
+             "h.jpg","i.jpg","j.png","k.jpg","l.jpg","m.jpg","n.jpg","o.jpg","p.jpg","q.jpg"
+             ,"r.jpg","s.jpg","t.jpg","u.jpg","v.jpg","w.jpg","x.jpg","y.jpg","z.jpg"]
+             
+             function getrandomnumber(min,max)
+              {
+                var c=Math.floor(Math.random()*(max-min+1)+min);
+                return c;
+              } 
+              names=[]; 
+              var div1=document.getElementById("div"); 
+              var p=document.getElementsByTagName("h2") [0] ;     
+             var generateNumber = document.getElementById("generate");
+             var  ImageCreate= document.getElementById("image")
+             var InputNumber = document.getElementById("numberOfletters");
+
+             generateNumber.addEventListener("click",function(){
+                $s1 =document.getElementsByClassName("s");
+               // clickCounter();            
+                var randomNumbers =parseInt(InputNumber.value,10);
+                
+                if(randomNumbers>26)
+                {
+                    div.textContent="";
+                   document.images[0].src="";
+                   document.images[0].width=0;
+                  document.images[0].height=0;
+                    p.innerHTML="Please Enter Letters From 0 to 26";
+                   
+                     
+                }
+                else
+                {
+                   
+                   getNumber(randomNumbers);
+
+                }
+             });
+                 
+                function getNumber(randomNumbers)
+                { 
+                    p.innerHTML="";
+                    div.textContent="";
+                   document.images[0].src="";
+                   document.images[0].width=0;
+                  document.images[0].height=0;
+
+               
+                 
+                for(let i=0;i<randomNumbers;i++)
+                { 
+                    ss=getrandomnumber(0,letters.length-1);
+                div.innerHTML+=("<input type=button class=s margin=10px padding=10px value='"+letters[ss]+"' onclick='display("+ss+")' > ");
+                }
+
+                }
+                function display(ss){
+                document.images[0].src=images[ss];
+                document.images[0].width=800;
+                document.images[0].height=500;
+                }
+                              
+                       
+
+             function Sobject(targets,types,dates)
+             {
+                    this.targets=targets;
+                    this.types=types;
+                    this.dates=dates;
+            }
+
+var $ArrayOfLoad=[];
+window.addEventListener("load",function(e){
+    var LoadObject =new Sobject(e.target="load",e.type,e.dates=new Date())   
+    var FirstLoad=localStorage.getItem("load")
+    if(FirstLoad==null)
+    {
+        $ArrayOfLoad.push(LoadObject);
+        localStorage.setItem("load",JSON.stringify($ArrayOfLoad));
+    }
+    else
+    {
+        $ArrayOfLoad=JSON.parse(localStorage.getItem("load"));
+        $ArrayOfLoad.push(LoadObject);
+        localStorage.setItem("load",JSON.stringify($ArrayOfLoad));
+    }
+});
+var $ArrayOfUnLoad=[];
+window.addEventListener("unload",function(e){
+    var UnLoadObject =new Sobject(e.targets="unload",e.type,e.dates=new Date())   
+    var FirstUnLoad=localStorage.getItem("unload")
+    if(FirstUnLoad==null)
+    {
+        $ArrayOfUnLoad.push(UnLoadObject);
+        localStorage.setItem("unload",JSON.stringify($ArrayOfUnLoad));
+    }
+    else
+    {
+        $ArrayOfUnLoad=JSON.parse(localStorage.getItem("unload"));
+        $ArrayOfUnLoad.push(UnLoadObject);
+        localStorage.setItem("unload",JSON.stringify($ArrayOfUnLoad));
+    }
+});
+var $Generate=[];
+generateNumber.addEventListener("click",function(e){
+    var Gobject =new Sobject(e.targets="generate",e.type,e.dates=new Date())   
+    var FirstGobject=localStorage.getItem("generate")
+    if(FirstGobject==null)
+    {
+        $Generate.push(Gobject);
+        localStorage.setItem("generate",JSON.stringify($Generate));
+    }
+    else
+    {
+        $Generate=JSON.parse(localStorage.getItem("generate"));
+        $Generate.push(Gobject);
+        localStorage.setItem("generate",JSON.stringify($Generate));
+    }
+
+
+
+
+
+    
+});
+ 
+ $Letter=[];
+ generateNumber.addEventListener("click",function(e){
+    
+ for($i=0;$i<$s1.length;$i++)
+{
+    
+   $s1[$i].addEventListener("click",function(e){
+    var Leobject =new Sobject(e.target.value,e.type,e.dates=new Date());   
+     var FirstLeobject=localStorage.getItem("letters");
+    if(FirstLeobject==null)
+    {
+        $Letter.push( Leobject );
+        localStorage.setItem("letters",JSON.stringify($Letter));
+    }
+    else
+    {
+        $Letter=JSON.parse(localStorage.getItem("letters"));
+        $Letter.push( Leobject );
+        localStorage.setItem("letters",JSON.stringify($Letter));
+    }
+});
+}
+});
+
+
+ 
+setInterval(function()
+ {
+	
+$.ajax({
+    "type":"POST",
+    "url":"myphp.php",
+    "data":{"load":JSON.stringify(JSON.parse(localStorage.getItem("load"))),
+   "unload":JSON.stringify(JSON.parse(localStorage.getItem("unload"))),
+    "generate":JSON.stringify(JSON.parse(localStorage.getItem("generate"))),
+    "letters":JSON.stringify(JSON.parse(localStorage.getItem("letters")))},
+    "success":function(response){
+        console.log(response);
+       // console.log(typeof response);
+		localStorage.clear();
+    }
+
+});
+},5000);  
+
+
+$.ajax(
+{
+"type":"GET",
+"url" :"myphp.php",
+"data":{"Sobject":""},
+"success" : function(response)
+{
+    if(response)
+    {
+ //  var x= JSON.parse(response);
+   alert(response);
+  // console.log("yarabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
+
+
+ }
+}
+
+
+ 
+}
+) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+               
+                </script>
+                
+         <style>
+             body
+             {
+                 background-color:seashell;
+             }
+             span
+             {
+                 font: outline;
+                 color: palevioletred;
+             }
+             h1
+             {
+                 color:palevioletred;
+                 
+             }
+             h2
+             {
+                 color: red;
+             }
+             #generate
+             {
+                 background-color: palevioletred;
+                 
+             }
+             .s
+             {
+                 background-color: palevioletred;
+             }
+             .alert
+             {
+                 background-color: seashell;
+             }
+            
+             
+         </style>
+     </body>
+</html>
